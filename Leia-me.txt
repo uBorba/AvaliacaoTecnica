@@ -43,7 +43,7 @@
 **    https://crested-polarity.000webhostapp.com/index.php                 **
 **                                                                         **
 **   A cópia atual do projeto está disponível no repositório:              **
-**   https://github.com/uBorba/AvaliacaoDesenvolvedor.git                  **
+**   https://github.com/uBorba/AvaliacaoTecnica.git                        **
 **                                                                         **
 *****************************************************************************
 

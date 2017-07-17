@@ -1,0 +1,139 @@
+﻿*****************************************************************************
+**                                                                         **
+**      GatiLabs - Avaliação de desenvolvedor                              **
+**                                                                         **
+*****************************************************************************
+
+
+
+*****************************************************************************
+**                                                                         **
+**              REQUISITO                                                  **
+**                                                                         **
+**  Desenvolver em PHP, Java  ou linguagem com boa produtividade           **
+**  para projetos web (Ruby, Go, Python, etc.):                            **
+**  Um formulário CRUD para contatos de usuários.                          **
+**  nome, telefone, email, setor, observações                              **
+**  Uma forma de listar os dados cadastrados filtrando por setor.          **
+**                                                                         **
+**  Deve disponibilizar um serviço REST que passando na requisição de      **
+**  Setor, retorne todos os usuários, com todos os dados (Json ou          **
+**  XML - o que achares mais apropriado).                                  **
+**                                                                         **
+**  Use banco de dados (pode ser SQL e NoSQL, o que achar melhor).         **
+**                                                                         **
+**  Faça simples e direto :-)                                              **
+**                                                                         **
+**  Layout responsivo é muito desejável!                                   **
+**                                                                         **
+**  Disponibilizar em algum repositório GIT (GitHub ou BitBucket) com      **
+**  instruções para realizar o testes. Disponibilizar em servidor no       **
+**  AWS/Digital Ocean é um diferencial.                                    **
+**                                                                         **
+**  Compreender e Capacidade Negociar escopo e prazo são                   **
+**  habilidades desejáveis.                                                **
+**                                                                         **
+*****************************************************************************
+
+
+*****************************************************************************
+**                                                                         **
+**   O projeto do teste está disponível e ativo para testes e operação     **
+**   no seguinte endereço:                                                 **
+**    https://crested-polarity.000webhostapp.com/index.php                 **
+**                                                                         **
+**   A cópia atual do projeto está disponível no repositório:              **
+**   https://github.com/uBorba/AvaliacaoDesenvolvedor.git                  **
+**                                                                         **
+*****************************************************************************
+
+
+*****************************************************************************
+**                                                                         **
+**                          PORTABILIDADE                                  **
+**                                                                         **
+**  Para portar o projeto é preciso acesso a um servidor que suporte       **
+**  PHP e banco de Dados MySQL ou padrão SQL.                              **
+**                                                                         **
+**   Arquivos:                                                             **
+**  1) index.php - Contem o codigo da página principal;                    **
+**  2) create.html - Contem o codigo html com o formulario dos campos      **
+**      para inclusão de cadastros;                                        **
+**  3) create.php - Contem o codigo para inclusão de registro na base;     **
+**  4) edit.php - Contem o formulario para edição/alteração de registros   **
+**      e atualização na base;                                             **
+**  5) delete.php - Contem o codigo de exclusão de registro na base;       **
+**  6) erro.php - Exibe mensagem em caso de falha na operação da base;     **
+**  7) db_config.php - Este arquivo contém valores de variaveis para       **
+**      configuração e da base de dados, deve ser editado se o projeto     **
+**      for portado para outro servidor ou outra base;                     **
+**  8) xmlSetor.php:  Exibe os registros de determinado setor(ver          **
+**     OPERAÇÃO);                                                          **
+**  9) downloadSetor.php: Gera o arquivo XML com registros de              **
+**     determinado setor (ver OPERAÇÃO);                                   **
+**  10)SQL.txt: Contem os scripts SQL que devem ser executados na          **
+**      nova base em caso de portabilidade;                                **
+**  11) setor.php: Obsoleto, não é utilizado pelo sistema, foi mantido     **
+**       por motivo de histórico ou mudanças futuras no modo de operar.    **
+**                                                                         **
+**  Como portar:                                                           **
+**  1) Criar uma base de dados no novo servidor de dados;                  **
+**  2) Executar os scripts conforme a sequencia numérica 001, 002, ...     **
+**      do arquivo 'SQL.txt' para criar as tabelas e indices necessarios,  **
+**      os scripts com numeração 000 não são obrigatórios.                 **
+**  3) O arquivo 'db_config.php' deve ser editado para correto             **
+**      endereçamento do servidor e nome da base.                          **
+**  4) Os arquivos '*.html' e '*.php' devem ser movidos para o             **
+**      diretório '/public_html' do servidor da página;                    **
+**  5) Verifique no serviço de hospedagem como inicializar o servidor,     **
+**      é comum que ele inicie automaticamente quando for houve a          **
+**      requisição da página;                                              **
+**  6) Em hospedagem padrão a página ficará disponível no seguinte         **
+**      formato: https://seu_endereco.com/index.php.                       **
+**                                                                         **
+*****************************************************************************
+
+
+
+*****************************************************************************
+**                                                                         **
+**                          OPERAÇÃO ou TESTES                             **
+**                                                                         **
+**  Não há testes automatizados, os testes efetuados são de operação.      **
+**  Não foram efetuados testes de stress.                                  **
+**  Havendo erros na estrutura da base de dados, uma mensagem de           **
+**  erro será exibida com a mensagem do erro para correção por             **
+**  Administrador de Banco de Dados, ou desenvolvedor responsável.         **
+**                                                                         **
+** 1) Acessando a pagina principal:                                        **
+**     'https://crested-polarity.000webhostapp.com/index.php'              **
+**     os contatos já cadastrados serão exibidos em formulário             **
+**     para visualização;                                                  **
+** 2) Novo contato: Junto a página principal há um link para               **
+**    'Novo contato'. Acessando este link um formulário com os campos      **
+**    Nome, Email, Telefone, Setor, Observacao ficarão disponiveis para    **
+**    inserção. Somente o campo 'Observacao' é opcional, os demais         **
+**    são de preenchimento obrigatório. O botão 'Incluir' cria o cadastro  **
+**    e redireciona para a pagina principal para visualização;             **
+**  3) Atualizar contato: Na coluna 'Atualizar' clique sobre o link        **
+**     'Editar' referente ao contato que será atualizado, a pagina será    **
+**      direcionada ao formulario dos campos para ser editado, após        **
+**     editar clique no botão 'Atualizar' para salvar as alterações;       **
+**  4) Excluir contato: Na coluna 'Atualizar' clique sobre o link          **
+**     'Excluir' referente ao contato que deve ser excluido, uma caixa     **
+**      de diálogo será exibida para confirmar, esta é sua chance de       **
+**      mudar de ideia;                                                    **
+**  5) Filtro por Setor: Na coluna 'Setor' clique sobre um link referente  **
+**      ao setor desejado, a pagina exibirá somente os cadastros           **
+**      referentes a este setor ( ver item 6);                             **
+**  6) XML dos contatos por setor: clique sobre 'Baixar XML do Setor',     **
+**      nesta opção será gerado dinamicamente um arquivo XML para          **
+**      download contendo todos registros do setor em questão. Este        **
+**      arquivo só existe para download e não é mantido no servidor        **
+**      evita-se assim a manutenção do servidor por excesso de             **
+**      arquivos.                                                          **
+**                                                                         **
+*****************************************************************************
+
+
+

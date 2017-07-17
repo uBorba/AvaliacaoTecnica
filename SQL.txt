@@ -1,0 +1,46 @@
+-- host: "crested-polarity.000webhostapp.com";
+-- login: clarindo.sc@gmail.com / 156pS1iNiQ
+
+-- db_username: "id2183875_clarindo";
+-- db_password: "clarindo";
+-- db_name: "id2183875_usuarios";
+-- tbl_name: "contato";
+
+
+-- 000 - Ignorar - criação de base
+CREATE DATABASE id2183875_usuarios;
+
+
+
+-- 000 - Ignorar - Testes de inserção.
+INSERT INTO contato (nome, email, telefone, setor, obs) 
+   VALUES( 'José Maria de Jesus', 'jose.maria@email.name', '+55 47 98765-4321', 'Teste', 'Usuario de teste.' );
+
+INSERT INTO contato (nome, email, telefone, setor) 
+   VALUES( 'Maria José de Jesus', 'maria.jose@email.name', '+55 47 90123-4567', 'Teste' );
+
+INSERT INTO contato (nome, email, telefone, setor, obs) 
+   VALUES( 'Gasparzinho Fantasma Camarada', 'gasparzinho@email.name', '+55 47 90000-0000', 'Além', 'Interage entre os planos.' );
+
+INSERT INTO contato (nome, email, telefone, setor, obs) 
+   VALUES( 'Fritz Alligator de Joinville', 'fritz@email.name', '+55 47 91111-1111', 'Joinville', 'Por onde anda o Fritz?' );
+
+INSERT INTO contato (nome, email, telefone, setor ) 
+   VALUES( 'Clarindo Schroeder', 'clarindo.sc@gmail.com', '+55 47 99602-7877', 'Desenvolvimento' );
+
+
+-- 001
+-- Campo "id" foi incluido para ser chave primaria, visto que o cadastro não usa CPF ou CNPJ.
+CREATE TABLE contato (
+   id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   nome VARCHAR(255) NOT NULL,
+   email VARCHAR(255) NOT NULL,
+   telefone VARCHAR(20) NOT NULL,
+   setor VARCHAR(255) NOT NULL,
+   obs VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 002
+-- Indice para criação do filtro por Setor;
+CREATE INDEX idx_setor
+ON contato (setor);
